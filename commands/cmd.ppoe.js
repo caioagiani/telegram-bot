@@ -1,7 +1,8 @@
-const bot = require("../src/server");
-const request = require("request");
+import bot from "../src/server";
+import request from "request";
 
-module.exports = (msg, match) => {
+module.exports = (msg, match) => 
+{
     const chatId = msg.chat.id;
     const ppoeId = match[1];
 
@@ -16,7 +17,7 @@ module.exports = (msg, match) => {
 
                 bot.sendMessage(
                     chatId,
-                    `@${msg.from.username}, resultado do PPoE ***${ppoeId}***:\n\nContrato: ${produto}\nPPoE: ${ppoe}`,
+                    `@${msg.from.username}, resultado do PPoE: \n\nCliente: ${ppoeId.toUpperCase()}\nContrato: ${produto}\nPPoE: ${ppoe}`,
                     {
                         parse_mode: "markdown"
                     }

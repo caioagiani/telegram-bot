@@ -1,7 +1,8 @@
-const bot = require("../src/server");
-const request = require("request");
+import bot from "../src/server";
+import request from "request";
 
-module.exports = (msg, match) => {
+module.exports = (msg, match) => 
+{
     const chatId = msg.chat.id;
     const portalId = match[1];
 
@@ -16,7 +17,7 @@ module.exports = (msg, match) => {
 
                     bot.sendMessage(
                     chatId,
-                    `@${msg.from.username}, portal do assinante gerado com sucesso:\n\nCliente: ${cliente}\nUsuário: ${username}\nSenha: ${password}`,
+                    `@${msg.from.username}, portal criado com sucesso:\n\nCliente: ${cliente}\nUsuário: ${username}\nSenha: ${password}`,
                     {
                         parse_mode: "markdown"
                     }

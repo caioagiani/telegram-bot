@@ -1,7 +1,8 @@
-const bot = require("../src/server");
-const request = require("request");
+import bot from "../src/server";
+import request from "request";
 
-module.exports = (msg, match) => {
+module.exports = (msg, match) => 
+{
     const chatId = msg.chat.id;
     const macAddres = match[1];
     const keyMac = "at_XVd1u1W5nVrzPHE15hvx6k5o7nSc0";
@@ -15,7 +16,7 @@ module.exports = (msg, match) => {
 
                 bot.sendMessage(
                     chatId,
-                    `@${msg.from.username}, resultado do mac ***${macAddres}***:\n\n` + `Name: ${companyName}\nCountry: ${countryCode}\nAddress: ${companyAddress}`,
+                    `@${msg.from.username}, resultado do mac: \n\nMac: ${macAddres}\n` + `Name: ${companyName}\nCountry: ${countryCode}\nAddress: ${companyAddress}`,
                     {
                         parse_mode: "markdown"
                     }

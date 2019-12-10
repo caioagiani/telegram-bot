@@ -1,13 +1,13 @@
-const bot = require("./src/server");
+import bot from "./src/server";
 /* import commands */ 
-const echo = require("./commands/cmd.echo");
-const ppoe = require("./commands/cmd.ppoe");
-const mac = require("./commands/cmd.mac");
-const ping = require("./commands/cmd.ping");
-const portal = require("./commands/cmd.portal");
+import mac from "./commands/cmd.mac";
+import echo from "./commands/cmd.echo";
+import ppoe from "./commands/cmd.ppoe";
+import ping from "./commands/cmd.ping";
+import portal from "./commands/cmd.portal";
 /* import events */
-const join = require("./events/event.join");
-const left = require("./events/event.left");
+import join from "./events/event.join";
+import left from "./events/event.left";
 
 // @channel -1001243970569
 bot.onText(/\/echo (.+)/, echo);
