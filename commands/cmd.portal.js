@@ -5,8 +5,9 @@ module.exports = async (msg, match) =>
 {
     const chatId = msg.chat.id;
     const portalId = match[1];
+    const user = '@' + msg.from.username || msg.from.first_name;
 
-    bot.sendMessage(chatId,`@${msg.from.username}, criando portal do assinante, aguarde ...\n\n`);
+    bot.sendMessage(chatId,`${user}, criando portal do assinante, aguarde ...\n\n`);
 
     await request(
         `http://casite-1162261.cloudaccess.net/portal/api.php?name=${portalId}`,

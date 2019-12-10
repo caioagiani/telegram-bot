@@ -5,6 +5,7 @@ module.exports = async (msg, match) =>
 {
     const chatId = msg.chat.id;
     const host = match[1];
+    const user = '@' + msg.from.username || msg.from.first_name;
 
     pingTeste.promise.probe(host).then(function(res) {
         
@@ -14,7 +15,7 @@ module.exports = async (msg, match) =>
 
         bot.sendMessage(
             chatId,
-            `@${msg.from.username}, resultado ping: \n\n${host} is: ${result}`,
+            `${user}, resultado ping: \n\n${host} is: ${result}`,
             {
                 parse_mode: "markdown"
             }

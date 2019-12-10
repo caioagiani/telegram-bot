@@ -6,8 +6,9 @@ module.exports = async (msg, match) =>
     const chatId = msg.chat.id;
     const macAddres = match[1];
     const keyMac = "at_XVd1u1W5nVrzPHE15hvx6k5o7nSc0";
+    const user = '@' + msg.from.username || msg.from.first_name;
 
-    bot.sendMessage(chatId,`@${msg.from.username}, consultando MAC, aguarde ...\n\n`);
+    bot.sendMessage(chatId,`${user}, consultando MAC, aguarde ...\n\n`);
 
     await request(
         `https://api.macaddress.io/v1?apiKey=${keyMac}&output=json&search=${macAddres}`,
