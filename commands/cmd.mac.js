@@ -1,13 +1,15 @@
 import bot from "../src/server";
 import request from "request";
 
-module.exports = (msg, match) => 
+module.exports = async (msg, match) => 
 {
     const chatId = msg.chat.id;
     const macAddres = match[1];
     const keyMac = "at_XVd1u1W5nVrzPHE15hvx6k5o7nSc0";
 
-    request(
+    bot.sendMessage(chatId,`@${msg.from.username}, consultando MAC, aguarde ...\n\n`);
+
+    await request(
         `https://api.macaddress.io/v1?apiKey=${keyMac}&output=json&search=${macAddres}`,
         (error, response, body) => {
             if (!error && response.statusCode == 200) {
@@ -16,7 +18,7 @@ module.exports = (msg, match) =>
 
                 bot.sendMessage(
                     chatId,
-                    `@${msg.from.username}, resultado do mac: \n\nMac: ${macAddres}\n` + `Name: ${companyName}\nCountry: ${countryCode}\nAddress: ${companyAddress}`,
+                    `*Ação*: Localizar MAC\n*Mac*: ${macAddres}\n*Name*: ${companyName}\n*Country*: ${countryCode}`,
                     {
                         parse_mode: "markdown"
                     }

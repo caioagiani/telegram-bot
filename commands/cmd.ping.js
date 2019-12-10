@@ -1,7 +1,7 @@
 import bot from "../src/server";
 import pingTeste from "ping";
 
-module.exports = (msg, match) => 
+module.exports = async (msg, match) => 
 {
     const chatId = msg.chat.id;
     const host = match[1];
