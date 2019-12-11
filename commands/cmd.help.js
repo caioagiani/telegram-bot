@@ -7,14 +7,15 @@ module.exports = (msg) =>
 
     bot.sendMessage( 
         chatId,
-        `*Ação*: Help\n\n` +
-        `/mac <mac> consulta mac equipamento\n` + 
-        `/ppoe <cliente> consultar ppoe do cliente\n` + 
-        `/portal <cliente> criar portal do assinante\n` + 
-        `/ping <ip> protocolo ICMP destino\n` + 
-        `/convite obtenha o link de invite para o grupo`,
-        {
-            parse_mode: "markdown"
-        }
+        `${user} comandos bot:\n\n` +
+        `/mac _<mac> consulta mac equipamento_\n` + 
+        `/ppoe _<cliente> consultar ppoe do cliente_\n` + 
+        `/portal _<cliente> criar portal do assinante_\n` + 
+        `/cisco _<bandwidth> taxa de dados em bits por segundo_\n` + 
+        `/whois _<destino> consultar informações do destino via TCP_\n` + 
+        `/ping _<ip> protocolo ICMP destino_\n` + 
+        `/traceroute _<ip> rastreia rota IP, ICMP_\n` + 
+        `/convite _obtenha o link de invite para o grupo_`,
+        { parse_mode: "markdown" }
     );
 }
