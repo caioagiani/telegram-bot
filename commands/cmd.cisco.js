@@ -21,5 +21,7 @@ module.exports = async (msg, match) =>
             `${user}, rate-limit result: \n\n*Input*: ${body}`, 
             { parse_mode: "markdown" }
         );
+
+        console.log( { status: 'command', 'user': user, 'command': host, return: true } ); 
     });
 }
