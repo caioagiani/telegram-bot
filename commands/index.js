@@ -1,0 +1,11 @@
+export const cisco = require("./cmd.cisco");
+export const convite = require("./cmd.convite");
+export const echo = require("./cmd.echo");
+export const help = require("./cmd.help");
+export const ipcalc = require("./cmd.ipcalc");
+export const mac = require("./cmd.mac");
+export const ping = require("./cmd.ping");
+export const portal = require("./cmd.portal");
+export const ppoe = require("./cmd.ppoe");
+export const traceroute = require("./cmd.traceroute");
+export const whois = require("./cmd.whois");

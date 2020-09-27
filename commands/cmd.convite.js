@@ -1,5 +1,4 @@
 import bot from "../src/server";
-import { invite_key } from "../config/index";
 
 module.exports = (msg) => {
   const chatId = msg.chat.id;
@@ -7,6 +6,6 @@ module.exports = (msg) => {
 
   bot.sendMessage(
     chatId,
-    `${user} link de convite: https://t.me/${invite_key}`
+    `${user} link de convite: https://t.me/${process.env.MAC_API_KEY}`
   );
 };

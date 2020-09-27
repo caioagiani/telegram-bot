@@ -16,6 +16,7 @@ module.exports = async (msg, match) => {
           chatId,
           `${user}, ${host} erro interno no servidor!`
         );
+
       if (!body.includes("ppoe"))
         return bot.sendMessage(
           chatId,
@@ -23,7 +24,7 @@ module.exports = async (msg, match) => {
         );
 
       const res = JSON.parse(body);
-      const { numero, produto, ppoe } = res.dados;
+      const { produto, ppoe } = res.dados;
 
       bot.sendMessage(
         chatId,

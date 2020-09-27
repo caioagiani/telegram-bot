@@ -1,6 +1,5 @@
 import bot from "../src/server";
 import request from "request";
-// import pingTeste from "ping";
 
 module.exports = async (msg, match) => {
   const chatId = msg.chat.id;

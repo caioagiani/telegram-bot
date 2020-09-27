@@ -1,17 +1,29 @@
 {
   "name": "telegram",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "nodemon index"
+  "main": "src/index.js",
+  "version": "0.2.0",
+  "keywords": [
+    "telegram",
+    "bot"
+  ],
+  "description": "Telegram Bot",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caioagiani"
   },
-  "author": "",
+  "author": {
+    "name": "Caio Agiani",
+    "email": "caio.agiani14@gmail.com",
+    "url": "https://www.linkedin.com/in/caioagiani"
+  },
+  "scripts": {
+    "start": "nodemon -r dotenv/config src/index.js"
+  },
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "node-telegram-bot-api": "^0.40.0",
+    "node-telegram-bot-api": "^0.50.0",
     "ping": "^0.2.2",
     "request": "^2.88.0"
   },

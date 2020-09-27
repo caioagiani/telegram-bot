@@ -19,6 +19,7 @@ module.exports = async (msg, match) => {
           chatId,
           `${user}, ${host} erro interno no servidor!`
         );
+
       if (!body.includes("password"))
         return bot.sendMessage(
           chatId,
